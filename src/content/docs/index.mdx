@@ -7,22 +7,26 @@ hero:
   image:
     file: ../../assets/houston.webp
   actions:
-    - text: The Robot
-      link: /vermis/guides/example/
+    - text: The Rover
+      link: /vermis/rover/00-main/
       icon: left-arrow
     - text: The Code
-      link: https://starlight.astro.build
+      link: /vermis/code/00-main/
       icon: right-arrow
       variant: minimal
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import { Card, CardGrid, LinkButton } from '@astrojs/starlight/components';
 
 ## The Problem
 In Zimbabwe, infestations of Fall Armyworm (FAW) result in annual maize yield losses estimated at approximately USD 83 million,
 with affected households exhibiting a 12% higher likelihood of experiencing food insecurity.
 Project VERMIS (Versatile Electronic Robot for Managed Insecticide Spraying) proposes a cost-effective,
 autonomous robotic solution designed to mitigate this challenge through precision agriculture.
+
+<LinkButton href="/vermis/project/00-definition/" variant="secondary">
+  Find Out More
+</LinkButton>
 
 ## The Project
 

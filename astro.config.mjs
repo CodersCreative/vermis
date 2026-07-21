@@ -13,24 +13,26 @@ export default defineConfig({
         {
           icon: "github",
           label: "GitHub",
-          href: "https://github.com/withastro/starlight",
+          href: "https://github.com/CodersCreative/vermis-files",
+        },
+        {
+          icon: "youtube",
+          label: "YouTube",
+          href: "https://youtube.com/@crvcode",
         },
       ],
       sidebar: [
         {
-          label: "Problem",
-          items: [{ autogenerate: { directory: "problem" } }],
+          label: "Project",
+          items: [{ autogenerate: { directory: "project" } }],
         },
         {
-          label: "Guides",
-          items: [
-            // Each item here is one entry in the navigation menu.
-            { label: "Example Guide", slug: "guides/example" },
-          ],
+          label: "Code",
+          items: [{ autogenerate: { directory: "code" } }],
         },
         {
-          label: "Reference",
-          items: [{ autogenerate: { directory: "reference" } }],
+          label: "Rover",
+          items: [{ autogenerate: { directory: "rover" } }],
         },
       ],
     }),
