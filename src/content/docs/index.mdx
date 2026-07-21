@@ -1,40 +1,54 @@
 ---
-title: Welcome to Starlight
-description: Get started building your docs site with Starlight.
+title: V.E.R.M.I.S
+description: Versatile Electronic Robot for Managed Insecticide Spraying
 template: splash # Remove or comment out this line to display the site sidebar on this page.
 hero:
-  tagline: Congrats on setting up a new Starlight project!
+  tagline: Versatile Electronic Robot for Managed Insecticide Spraying
   image:
     file: ../../assets/houston.webp
   actions:
-    - text: Example Guide
+    - text: The Robot
       link: /vermis/guides/example/
-      icon: right-arrow
-    - text: Read the Starlight docs
+      icon: left-arrow
+    - text: The Code
       link: https://starlight.astro.build
-      icon: external
+      icon: right-arrow
       variant: minimal
 ---
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
 
-## Next steps
+## The Problem
+In Zimbabwe, infestations of Fall Armyworm (FAW) result in annual maize yield losses estimated at approximately USD 83 million,
+with affected households exhibiting a 12% higher likelihood of experiencing food insecurity.
+Project VERMIS (Versatile Electronic Robot for Managed Insecticide Spraying) proposes a cost-effective,
+autonomous robotic solution designed to mitigate this challenge through precision agriculture.
+
+## The Project
 
 <CardGrid stagger>
-	<Card title="Update content" icon="pencil">
-		Edit `src/content/docs/index.mdx` to see this page change.
+	<Card title="The Rover" icon="pencil">
+		The developed rover integrates embedded artificial intelligence to enable early detection and targeted eradication of FAW populations
+		before significant crop damage occurs.
+		The system autonomously navigates between crop rows and employs a You Only Look Once (YOLOv11) computer vision model,
+		deployed on a Raspberry Pi 5,
+		which was trained on a dataset of 300 hyper-localized images to achieve real-time pest identification under field conditions.
 	</Card>
-	<Card title="Change page layout" icon="document">
-		Delete `template: splash` in `src/content/docs/index.mdx` to display a
-		sidebar on this page.
+	<Card title="The Improvements" icon="pencil">
+		To enhance mechanical reliability and operational efficiency,
+		the spraying subsystem was optimized by transitioning from a suction-based mechanism to a gravity-fed delivery system.
+		This design leverages a hydrostatic pressure of approximately 3004.3 Pa,
+		thereby eliminating suction lift limitations and ensuring consistent pesticide flow.	
 	</Card>
-	<Card title="Add new content" icon="add-document">
-		Add Markdown or MDX files to `src/content/docs` to create new pages.
+	<Card title="The Experiments" icon="add-document">
+		Experimental evaluation was conducted to compare the efficacy of the rover against conventional knapsack spraying methods.
+		Results indicate that the rover achieves an 80% pest reduction per unit of pesticide applied,
+		compared to 50% achieved by the knapsack sprayer.
+		This demonstrates a substantial improvement in pesticide use efficiency and pest control effectiveness.	
 	</Card>
-	<Card title="Configure your site" icon="setting">
-		Edit your `sidebar` and other config in `astro.config.mjs`.
-	</Card>
-	<Card title="Read the docs" icon="open-book">
-		Learn more in [the Starlight Docs](https://starlight.astro.build/).
+	<Card title="The Results" icon="setting">
+		Overall, the proposed system offers a scalable, low-cost, and labor-efficient solution for FAW management.
+		By reducing pesticide wastage, minimizing human labor requirements, and improving crop protection outcomes,
+		Project VERMIS presents a viable technological intervention for enhancing agricultural productivity and food security in FAW-affected regions.	
 	</Card>
 </CardGrid>

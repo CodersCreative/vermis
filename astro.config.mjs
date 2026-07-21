@@ -8,7 +8,7 @@ export default defineConfig({
   base: "/vermis",
   integrations: [
     starlight({
-      title: "My Docs",
+      title: "V.E.R.M.I.S",
       social: [
         {
           icon: "github",
@@ -17,6 +17,10 @@ export default defineConfig({
         },
       ],
       sidebar: [
+        {
+          label: "Problem",
+          items: [{ autogenerate: { directory: "problem" } }],
+        },
         {
           label: "Guides",
           items: [
