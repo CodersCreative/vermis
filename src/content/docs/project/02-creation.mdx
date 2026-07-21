@@ -1,0 +1,49 @@
+---
+title: Creating The Rover
+description: Finally making the thing.
+---
+
+When designing the project we knew that there were a couple major hurdles that would determine its effectiveness,
+usability and customer base in Zimbabwe and Southern Africa as a whole.
+We decided after consulting farmers across the country that these factors were:
+
+import { Card, CardGrid, LinkButton } from '@astrojs/starlight/components';
+
+<CardGrid stagger>
+  <Card title="Price">
+    The average Zimbabwean only makes around $2400 per year paired with the fact that this project’s value greatly
+    increases with the effect that these pests have had on a farmer further lowering their income made it obvious to us
+    that making it as cheap as possible would be the best route forward.
+    Primarily to help reduce the cost of the rover we prioritized the use of locally available materials and low-cost microcontrollers
+    to ensure the final unit cost remains accessible to small-scale communal farmers.  
+  </Card>
+  <Card title="Waterproofing">
+    Nationally Zimbabwe records around 500 to 750 mm of rainfall annually and with some pests such as army worm striving and
+    spreading faster during heavy rain we decided that allowing the rover to work in this weather
+    would help further stop the spread of pests across farm lands within the country.
+    Furthermore waterproofing removes the chance of the device being destroyed if not properly stored when its raining
+    further reducing the amount of stress and worries these farmers experience  
+  </Card>
+  <Card title="Night time capabilities">
+    By allowing the rover to work during night time we can allow farmers with larger pieces of land to require less rovers
+    to keep adequate coverage of their crops as the device can be working through the day and night.
+    To help the rover work at night we equipped it with a range of low-cost energy-efficient LEDs
+    that can adequately light up its surroundings for the use of the integrated camera.
+  </Card>
+  <Card title="Autonomously controlled">
+    One of our mai goals was to reduce the amount of people dedicated to combatting pesticides so by making it autonomously controlled
+    we reduce the need for personnel to be hired to control and manage the rovers effectively.
+    Furthermore it reduces the barrier to entry as the setup process greatly simplifies and farmers who wouldn’t have received lots of training
+    in control devices such as these can now feel comfortable knowing that device will work to the best of its abilities
+    without their assistance or the need for specialized expertise.
+  </Card>
+</CardGrid>
+
+So with these requirements in hand we set out designing and building a scale model of the final device.
+This model would still be fully functional but primarily only work with smaller crops as it would not be able to sufficiently observe larger crops such as maize.
+The model still remains with the ability to fully autonomously manage pesticide dispatch on farm land
+and would later be used for our experiments to showcase the effectiveness of this design.
+
+<LinkButton href="../../rover/04-full/" variant="primary">
+  See The Rover
+</LinkButton>

@@ -1,27 +1,84 @@
 ---
-title: Defining The Problem.
-description: Why we're doing all of this.
+title: Engineering Methodology
+description: Designing the mechanics
 ---
 
+The rover’s physical architecture was developed using AutoCAD to ensure precision in hardware integration.
+The Autocad designs are also compatible with laser cutting devices.
 
-According to CAB International and EurekAlert; in Zimbabwe,
-farmers that are affected by army worms are 12% more likely to experience hunger
-and in the country results in annual losses from just maize of $83 million.
-Furthermore an investigation led by Dr Justice Tambo found that a 44% reduction in individual household income
-and a 17% increase in the likelihood of hunger were observed under conditions of severe infestation.
-Findings show that households failing to combat fall armyworm saw per-person income fall by 50%,
-while those that took control measures suffered no significant income loss.
+## The Prototype
 
-To combat the infestation, farmers typically relied on synthetic pesticides and the manual collection of egg masses and larvae.
-Supplementary tactics included filling maize whorls with ash or sand,
-the application of detergents, and the rogueing and subsequent burning of affected vegetation.
+![Full Body](../../../assets/p1.png)
 
-The effects of this pest vary wildly across various parts of the Zimbabwean economy.
-The issue is also commonly seen across sub-saharan Africa where it causes an estimated crop loss of up to $13 billion.  
+### Realistic Material View
 
-![FAW Report](../../../assets/faw_report.png)
+![Side3](../../../assets/p4.png)
 
-According to the table made by the Ministry of Agriculture, Mechanization and Irrigation Development Department of Research and Specialist Services,
-the pesticide is effective especially in Mashonaland West, Zvimba, the location of Rainham.
-This shows that the key problem is ineffective application and lack of resources and funds.
+### Side Views
 
+import { Card, CardGrid, LinkButton } from '@astrojs/starlight/components';
+
+<CardGrid stagger>
+  <Card>
+    ![Side1](../../../assets/p2.png)
+  </Card>
+  <Card>  
+    ![Side2](../../../assets/p3.png)
+  </Card>
+</CardGrid>
+
+### Linkages System
+
+<CardGrid stagger>
+  <Card>
+    ![Link1](../../../assets/l1.png)
+  </Card>
+  <Card>  
+    ![Link2](../../../assets/l2.png)
+  </Card>
+  <Card>
+    ![Link3](../../../assets/l3.png)
+  </Card>
+  <Card>  
+    ![Link4](../../../assets/l4.png)
+  </Card>  
+</CardGrid>
+
+### Spraying System
+
+<CardGrid stagger>
+  <Card>
+    ![Spray1](../../../assets/spray1.png)
+  </Card>
+  <Card>  
+    ![Spray2](../../../assets/spray2.png)
+  </Card>
+</CardGrid>
+
+#### Problem Faced
+
+In our initial prototype, the DC pump was mounted above the reservoir.
+This required the pump to create a partial vacuum to lift the pesticide against gravity - a process known as suction lift.
+However, we encountered significant performance issues.
+The small DC pumps used in our rover are typically centrifugal and are more efficient at pushing fluid than pulling it.
+The resistance caused by the vertical displacement led to inconsistent spray patterns and frequent "priming" issues,
+where air trapped in the line prevented the pump from moving any liquid at all. To resolve this, we overhauled the tank architecture,
+moving the pump to a sub-tank position. By placing the pump beneath the reservoir, we converted the system into a gravity-fed configuration.
+This ensures the pump inlet is constantly flooded with liquid,
+eliminating air locks and utilizing the hydrostatic pressure of the pesticide to assist the motor.
+
+![Side2](../../../assets/p3.png)
+
+To quantify the benefit of this move, we calculated the hydrostatic pressure (P) exerted at the bottom of the tank.
+This pressure is a function of the liquid's density (ρ), the acceleration due to gravity (g), and the height of the liquid column (h).
+
+##### Calculations
+
+![Calculation](../../../assets/calc1.png)
+
+##### Results
+
+By relocating the pump, we gained approximately 3.0 kPa of "free" pressure.
+While 3004 Pa may seem modest, it is sufficient to overcome the internal friction of the pump's valves and ensure an immediate,
+high-pressure spray upon activation. This change significantly improved the reliability of the activate_pump() function in our code,
+as the software no longer had to account for the "lag" time previously required to prime the spray line.
